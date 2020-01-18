@@ -4,7 +4,7 @@ const customersCtrl = require('../controllers/customers');
 
 router.get('/customers', customersCtrl.index);
 router.get('/new', customersCtrl.new);
-router.get('/customers/:id', customersCtrl.show);
+router.get('/:id', customersCtrl.show);
 router.post('/', customersCtrl.create);
 // router.post('/attributes', isLoggedIn, customersCtrl.addAttribute);
 // router.delete('/attributes/:id', isLoggedIn, customersCtrl.delAttribute);
