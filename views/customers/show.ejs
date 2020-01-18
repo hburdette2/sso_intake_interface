@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSO Customers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+</head>
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper blue">
+        <a href="" class="brand-logo left">Single Sign On Information</a>
+        <ul class="right">
+          <li><a href="/">Home</li></a>
+          <li><a href="/customers">See All SSO Customers</li></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<br><br>
+<br><br>
+<main>
+    <% customers.forEach(function(attribute) { %>
+    <div class="label">Organization Name: </div>
+    <div><%= customer.company %></div>
+    <div class="label">Contact Name: </div>
+    <div><%= customer.name %></div>
+    <div class="label">Contact Email: </div>
+    <div><%= customer.email %></div>
+    <div class="label">Self Provisioned: </div>
+    <div><%= attribute.selfProvisioned %></div>
+    <div class="label">Remote Login: </div>
+    <div><%= attribute.remoteLogin %></div>
+<% }) %>
+</main>
