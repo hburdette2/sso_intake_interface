@@ -31,8 +31,15 @@
       </div>
       <div>
         <main id="customerInfo">
-          <% customers.forEach(function(m) { %>
-          <ul>
+            <ul class="collection">
+              <% customers.forEach(function(m) { %>
+                <li>
+                  <form action="/customers/<%= m._id %>?_method=DELETE" method="POST">
+                  <button type ="submit" class="btn red white-text">Delete</button>
+                  </form>
+                </li>
+            </ul>
+            <ul>
             <li class="label">ORGANIZATION NAME:</li><a href="/<%= m._id %>" class="btn btn-primary">Details</a>
             <li><%= m.company %></li>
             <li class="label">CONTACT NAME:</li>
@@ -40,7 +47,7 @@
             <li class="label">EMAIL:</li>
             <li><%= m.email %></li>
           </ul>
-          <% }) %>
+          <% }); %>
         </main>
       </div>
     </nav>
