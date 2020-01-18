@@ -1,14 +1,18 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT;
+
 
 const indexRoutes = require('./routes/index');
 const customerRoutes = require('./routes/customers');
 
-require('dotenv').config();
+
 
 const app = express();
 
