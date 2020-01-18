@@ -5,7 +5,7 @@ module.exports = {
   create,
   delCustomer,
   show,
-  new: newCustomer
+  new: newCustomer,
 };
 
 function newCustomer(req, res) {
@@ -42,10 +42,8 @@ function create(req, res) {
 function delCustomer(req, res) {
   console.log(req.params.id);
   console.log(req.user.customers);
-    req.user.customers.splice(req.params.id, 1);
-
-    req.user.save(function(err){
-      res.redirect('/customers');
-    })
-    
-}
+   Customer.findByIdAndDelete(req.params.id, function(err){
+     if (err) return console.log(err);
+     res.redirect('/customers');
+   })
+};

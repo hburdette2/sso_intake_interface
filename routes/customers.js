@@ -7,7 +7,7 @@ router.get('/new', customersCtrl.new);
 router.get('/:id', customersCtrl.show);
 router.post('/', customersCtrl.create);
 // router.post('/attributes', isLoggedIn, customersCtrl.addAttribute);
-// router.delete('/attributes/:id', isLoggedIn, customersCtrl.delAttribute);
+router.delete('/customers/:id', customersCtrl.delCustomer);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

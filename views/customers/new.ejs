@@ -27,12 +27,7 @@
     </nav>
 <br><br>
 <br><br>
-<p>Please first ensure that the Customer is not in the dropdown
-    <select>
-      <% customers.forEach(function(p) { %>
-        <option><%= p.company %></option>
-      <% }) %>
-    </select>
+<p>Please first ensure that the Customer is not already registered on All SSO Customers page</p>
 
 <form id="new-form" action="/customers" method="POST">
   <label>Organization Name: </label>

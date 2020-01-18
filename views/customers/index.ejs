@@ -31,16 +31,16 @@
       </div>
       <div>
         <main id="customerInfo">
+          <% customers.forEach(function (m) { %> 
             <ul class="collection">
-              <% customers.forEach(function(m) { %>
                 <li>
-                  <form action="/customers/<%= m._id %>?_method=DELETE" method="POST">
+                  <form action="/customers/<%=m._id%>?_method=DELETE" method="POST">
                   <button type ="submit" class="btn red white-text">Delete</button>
                   </form>
                 </li>
                 <li>
-                  <form action="/customers/<%= m._id %> method="GET">
-                  <button type="submit" class="btn blue white-text">Details</button>
+                  <form action="/customers/<%= m._id %>" method="GET">
+                  <button class="btn blue white-text">Details</button>
                   </form>
                 </li>
             </ul>
@@ -52,7 +52,7 @@
             <li class="label">EMAIL:</li>
             <li><%= m.email %></li>
           </ul>
-          <% }); %>
+          <% }) %>
         </main>
       </div>
     </nav>
