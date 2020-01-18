@@ -14,36 +14,32 @@
   <!-- JavaScript for Materialize -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
 </head>
-<body>
-  <div class="navbar-fixed">
+<div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper blue">
         <a href="" class="brand-logo left">Single Sign On Information</a>
         <ul class="right">
           <li><a href="/">Home</li></a>
-          <li><a href="/customers/new">Add Customer</li></a>
+          <li><a href="/customers">See All SSO Customers</li></a>
+          </li>
         </ul>
       </div>
     </nav>
-  </div>
-      <div class="container">
-        <h1>Single Sign On Customers</h1>
-      </div>
-      <div>
-        <main id="customerInfo">
-          <% customers.forEach(function(m) { %>
-          <ul>
-            <li class="label">ORGANIZATION NAME:</li><a href="/<%= m._id %>" class="btn btn-primary">Details</a>
-            <li><%= m.company %></li>
-            <li class="label">CONTACT NAME:</li>
-            <li><%= m.name %></li>
-            <li class="label">EMAIL:</li>
-            <li><%= m.email %></li>
-          </ul>
-          <% }) %>
-        </main>
-      </div>
-    </nav>
-  </div>
-</body>
-</html>
+<br><br>
+<br><br>
+<p>Please first ensure that the Customer is not in the dropdown
+    <select>
+      <% customers.forEach(function(p) { %>
+        <option><%= p.company %></option>
+      <% }) %>
+    </select>
+
+<form id="new-form" action="/customers" method="POST">
+  <label>Organization Name: </label>
+  <input type="text" name="company">
+  <label>Contact Name: </label>
+  <input type="text" name="name">
+  <label>Contact Email: </label>
+  <input type="text" name="email">
+  <input type="submit" value="Add Customer">
+</form>

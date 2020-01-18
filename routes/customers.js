@@ -2,7 +2,7 @@ const router = require('express').Router();
 const customersCtrl = require('../controllers/customers');
 
 
-router.get('/customers', customersCtrl.index);
+router.get('/', customersCtrl.index);
 router.get('/new', customersCtrl.new);
 router.get('/:id', customersCtrl.show);
 router.post('/', customersCtrl.create);

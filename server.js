@@ -31,7 +31,7 @@ app.use(passport.session());
 app.use(methodOverride('_method'));
 
 app.use('/', indexRoutes);
-app.use('/', customerRoutes);
+app.use('/customers', customerRoutes);
 
 
 app.listen(port, () =>{

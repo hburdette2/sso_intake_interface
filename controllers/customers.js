@@ -9,7 +9,9 @@ module.exports = {
 };
 
 function newCustomer(req, res) {
-  res.render('customers/new', {title: 'Add Customer'});
+  Customer.find({}, function(err, customers){
+    res.render('customers/new', {title: 'Add Customer', customers});
+  });
 }
 
 function index(req, res) {
