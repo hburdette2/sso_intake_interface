@@ -38,9 +38,14 @@
                   <button type ="submit" class="btn red white-text">Delete</button>
                   </form>
                 </li>
+                <li>
+                  <form action="/customers/<%= m._id %> method="GET">
+                  <button type="submit" class="btn blue white-text">Details</button>
+                  </form>
+                </li>
             </ul>
             <ul>
-            <li class="label">ORGANIZATION NAME:</li><a href="/<%= m._id %>" class="btn btn-primary">Details</a>
+            <li class="label">ORGANIZATION NAME: </li>
             <li><%= m.company %></li>
             <li class="label">CONTACT NAME:</li>
             <li><%= m.name %></li>
