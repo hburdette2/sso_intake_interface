@@ -41,7 +41,6 @@ function create(req, res) {
 
 function delCustomer(req, res) {
   console.log(req.params.id);
-  console.log(req.user.customers);
    Customer.findByIdAndDelete(req.params.id, function(err){
      if (err) return console.log(err);
      res.redirect('/customers');

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const  localDb = 'mongodb://localhost/customers'
 
-mongoose.connect(process.env.DATABASE_URL ||'mongodb://localhost/oauth2callback',{
+mongoose.connect(localDb || process.env.DATABASE_URL,{
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
